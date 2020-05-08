@@ -14,6 +14,11 @@ namespace Mxd_Blog.Controllers
         {
             return View();
         }
+        [Route("/Home")]
+        public IActionResult Home()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

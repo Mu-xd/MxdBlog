@@ -4,20 +4,66 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mxd·@ViewData["Title"]</title>
-
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-              crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
-    </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="~/js/layout.js" type="module"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link href="~/css/layout.css" rel="stylesheet" />
 </head>
 <body>
-    @RenderBody()
+    <div id="app">
+        <el-container>
+            <el-header>
+                <div class="Navigation" id="Navigation">
+                    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" v-on:select="handleSelect">
+                        <el-menu-item index="1">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">
+                                首页
+                            </a>
+                        </el-menu-item>
+                        <el-menu-item index="2">
+                            <a asp-area="" asp-controller="Home" asp-action="Home">
+                                博客
+                            </a>
+                        </el-menu-item>
+                        <el-menu-item index="3">
+                            <a asp-area="" asp-controller="Home" asp-action="Home">
+                                日记
+                            </a>
+                        </el-menu-item>
+                        <el-menu-item index="4">
+                            <a asp-area="" asp-controller="Home" asp-action="Home">
+                                小工具
+                            </a>
+                        </el-menu-item>
+                        <el-menu-item index="5">
+                            <a asp-area="" asp-controller="Home" asp-action="Home">
+                                留言
+                            </a>
+                        </el-menu-item>
+                        <el-menu-item index="6">
+                            <a asp-area="" asp-controller="Home" asp-action="Home">
+                                关于
+                            </a>
+                        </el-menu-item>
+                    </el-menu>
+                </div>
+            </el-header>
+            <div class="line"></div>
+            <div class="mbody">
+                <el-container>
+                    <el-main class="mmain" style="height:900px" >@RenderBody()</el-main>
+                    <el-aside class="maside" style="width:30%">Aside</el-aside>
+                </el-container>
+                <div class="line"></div>
+                <el-footer>
+                    <div class="mfooter">Copyright © 2020 Mxd·博客 All Rights Reserved V.0.0.1 备案号:未备案</div>
+                </el-footer>
+            </div>
+        </el-container>
+    </div>
 </body>
 </html>

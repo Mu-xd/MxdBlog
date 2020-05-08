@@ -52,9 +52,12 @@ namespace Mxd_Blog
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            //这里修改路由
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "Home",
+                    template: "{controller=Home}/{action=Home}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

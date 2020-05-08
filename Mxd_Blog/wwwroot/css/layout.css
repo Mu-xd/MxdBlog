@@ -1,0 +1,40 @@
+﻿.Navigation {
+    position: absolute;
+    left: 50%;
+    right: 10%;
+    clear: both;
+}
+    .Navigation a {
+        text-decoration: none;
+        color: #333;
+    }
+header {
+    height:initial;
+    overflow:hidden;
+}
+.line {
+    background-color:#6666;
+    padding:1px;
+}
+.mmain {
+    width: 60%;
+}
+.maside {
+    width: 40%;
+    border-left: solid 1px #6666;
+}
+.el-footer {
+    padding: 0px;
+    background-color: #302f2f;
+}
+.mfooter {
+    bottom: 0;
+    text-align: center;
+}
+.mbody {
+    background-image: url('../image/indexbg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment:fixed;
+    height:100%;
+}
