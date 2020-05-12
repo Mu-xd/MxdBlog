@@ -56,9 +56,6 @@ namespace Mxd_Blog
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "Home",
-                    template: "{controller=Home}/{action=Home}/{id?}");
-                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });

@@ -17,9 +17,22 @@ namespace Mxd_Blog.Controllers
         [Route("/Home")]
         public IActionResult Home()
         {
+            ViewBag.Index = 1;
             return View();
         }
         public IActionResult Privacy()
+        {
+            ViewBag.Index = 6;
+            return View();
+        }
+        [Route("/WriteBlog")]
+        public IActionResult WriteBlog()
+        {
+            ViewBag.Index = 2.1;
+            return View();
+        }
+        [Route("/Login")]
+        public IActionResult Login()
         {
             return View();
         }
